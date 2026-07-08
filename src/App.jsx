@@ -1,13 +1,17 @@
 import "./App.css";
 
-function LogoMark({ size = "large" }) {
+function LogoMark({ size = "large", muted = false }) {
   return (
-    <span className={`logoMark ${size === "large" ? "logoMarkLarge" : ""}`}>
-      <span className="logoGlow" />
-      <span className="logoArrow leftArrow">→</span>
-      <span className="logoArrow rightArrow">←</span>
-      <span className="logoDot logoDotOne" />
-      <span className="logoDot logoDotTwo" />
+    <span
+      className={[
+        "logoMark",
+        size === "large" ? "logoMarkLarge" : "",
+        muted ? "logoMarkMuted" : "",
+      ]
+        .filter(Boolean)
+        .join(" ")}
+    >
+      <img src="/logo-telocambio.png" alt="TeLoCambio" />
     </span>
   );
 }
@@ -17,15 +21,15 @@ export default function App() {
     <main className="comingSoonPage">
       <div className="comingSoonBackground" aria-hidden="true">
         <span className="bgLogo bgLogoOne">
-          <LogoMark size="large" />
+          <LogoMark size="large" muted />
         </span>
 
         <span className="bgLogo bgLogoTwo">
-          <LogoMark size="large" />
+          <LogoMark size="large" muted />
         </span>
 
         <span className="bgLogo bgLogoThree">
-          <LogoMark size="large" />
+          <LogoMark size="large" muted />
         </span>
 
         <span className="decorLine decorLineOne" />
@@ -43,16 +47,12 @@ export default function App() {
         </div>
 
         <div className="comingSoonContent">
-          
-
           <h1>
             Muy
             <span> pronto.</span>
           </h1>
 
-          <p>
-            Una nueva experiencia está cerca.
-          </p>
+          <p>Una nueva experiencia está cerca.</p>
         </div>
       </section>
     </main>

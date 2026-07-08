@@ -84,38 +84,6 @@ body {
   position: absolute;
   opacity: 0.12;
   filter: blur(0.2px);
-  animation: floatLogo 9s ease-in-out infinite;
-}
-
-.bgLogo .logoMark {
-  width: 120px;
-  height: 120px;
-  border-radius: 38px;
-}
-
-.bgLogo .logoMarkLarge .logoArrow,
-.bgLogo .logoMark .logoArrow {
-  font-size: 40px;
-}
-
-.bgLogo .logoDot {
-  width: 9px;
-  height: 9px;
-}
-
-.bgLogo .logoDotOne {
-  top: 25px;
-  right: 28px;
-}
-
-.bgLogo .logoDotTwo {
-  bottom: 25px;
-  left: 28px;
-}
-
-.bgLogo .logoMark::after {
-  inset: 16px;
-  border-radius: 24px;
 }
 
 .bgLogoOne {
@@ -142,7 +110,6 @@ body {
   border: 8px solid transparent;
   border-top-color: rgba(0, 168, 141, 0.28);
   border-radius: 50%;
-  animation: driftLine 8s ease-in-out infinite;
 }
 
 .decorLineOne {
@@ -185,7 +152,6 @@ body {
   font-weight: 900;
   box-shadow: 0 18px 38px rgba(19, 34, 56, 0.08);
   backdrop-filter: blur(12px);
-  animation: floatArrow 5.5s ease-in-out infinite;
 }
 
 .decorArrowOne {
@@ -261,29 +227,6 @@ body {
 .comingSoonLogoWrap {
   display: grid;
   place-items: center;
-  animation: logoEntrance 0.8s ease both;
-}
-
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  width: fit-content;
-  margin: 0 auto 18px;
-  border-radius: var(--radius-pill);
-  background: rgba(0, 198, 167, 0.14);
-  border: 1px solid rgba(0, 198, 167, 0.18);
-  padding: 10px 16px;
-  color: var(--teal-dark);
-  font-size: 12px;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-}
-
-.eyebrow span {
-  font-size: 16px;
-  letter-spacing: 0;
 }
 
 .comingSoonCard h1 {
@@ -310,189 +253,48 @@ body {
 }
 
 /* =========================================================
-   Logo animado
+   Logo fijo
    ========================================================= */
 
 .logoMark {
   position: relative;
-  width: 42px;
-  height: 42px;
-  flex: 0 0 42px;
-  border-radius: 18px;
+  width: 72px;
+  height: 72px;
+  flex: 0 0 72px;
   display: grid;
   place-items: center;
-  overflow: hidden;
-  isolation: isolate;
-  background:
-    radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.52), transparent 24%),
-    linear-gradient(135deg, #00d6b3 0%, #00b894 48%, #007f72 100%);
-  box-shadow:
-    0 16px 34px rgba(0, 198, 167, 0.28),
-    inset 0 1px 0 rgba(255, 255, 255, 0.42);
+  border-radius: 50%;
+}
+
+.logoMark::before,
+.logoMark::after {
+  display: none;
+}
+
+.logoMark img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  filter: none;
+  animation: none;
 }
 
 .logoMarkLarge {
-  width: 92px;
-  height: 92px;
-  flex-basis: 92px;
-  border-radius: 32px;
-  box-shadow:
-    0 24px 52px rgba(0, 198, 167, 0.34),
-    0 0 0 12px rgba(0, 198, 167, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.42);
+  width: 170px;
+  height: 80px;
+  flex-basis: 132px;
 }
 
-.logoGlow {
-  position: absolute;
-  inset: -45%;
-  z-index: -1;
-  background:
-    conic-gradient(
-      from 140deg,
-      transparent,
-      rgba(255, 255, 255, 0.55),
-      transparent,
-      rgba(19, 34, 56, 0.22),
-      transparent
-    );
-  animation: logoSpin 7s linear infinite;
+.logoMarkMuted {
+  width: 170px;
+  height: 170px;
+  opacity: 0.12;
 }
 
-.logoArrow {
-  position: absolute;
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 1000;
-  line-height: 1;
-  text-shadow: 0 3px 10px rgba(19, 34, 56, 0.22);
-}
-
-.logoMarkLarge .logoArrow {
-  font-size: 32px;
-}
-
-.leftArrow {
-  animation: arrowLeftPulse 2.4s ease-in-out infinite;
-}
-
-.rightArrow {
-  animation: arrowRightPulse 2.4s ease-in-out infinite;
-}
-
-.logoDot {
-  position: absolute;
-  width: 7px;
-  height: 7px;
-  border-radius: var(--radius-pill);
-  background: #ffffff;
-  opacity: 0.8;
-  box-shadow: 0 0 14px rgba(255, 255, 255, 0.75);
-}
-
-.logoDotOne {
-  top: 18px;
-  right: 20px;
-}
-
-.logoDotTwo {
-  bottom: 18px;
-  left: 20px;
-  opacity: 0.55;
-}
-
-.logoMark::after {
-  content: "";
-  position: absolute;
-  inset: 8px;
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  pointer-events: none;
-}
-
-.logoMarkLarge::after {
-  inset: 13px;
-  border-radius: 21px;
-}
-
-/* =========================================================
-   Animaciones
-   ========================================================= */
-
-@keyframes logoSpin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes arrowLeftPulse {
-  0%,
-  100% {
-    transform: translateX(-8px);
-    opacity: 0.88;
-  }
-
-  50% {
-    transform: translateX(-3px);
-    opacity: 1;
-  }
-}
-
-@keyframes arrowRightPulse {
-  0%,
-  100% {
-    transform: translateX(8px);
-    opacity: 0.88;
-  }
-
-  50% {
-    transform: translateX(3px);
-    opacity: 1;
-  }
-}
-
-@keyframes floatLogo {
-  0%,
-  100% {
-    transform: translateY(0) rotate(-4deg);
-  }
-
-  50% {
-    transform: translateY(-18px) rotate(4deg);
-  }
-}
-
-@keyframes driftLine {
-  0%,
-  100% {
-    transform: translateY(0) rotate(14deg);
-  }
-
-  50% {
-    transform: translateY(-12px) rotate(20deg);
-  }
-}
-
-@keyframes floatArrow {
-  0%,
-  100% {
-    transform: translateY(0) rotate(-4deg);
-  }
-
-  50% {
-    transform: translateY(-12px) rotate(5deg);
-  }
-}
-
-@keyframes logoEntrance {
-  from {
-    opacity: 0;
-    transform: translateY(14px) scale(0.92);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+.logoMarkMuted img {
+  filter: none;
+  animation: none;
 }
 
 /* =========================================================
@@ -553,23 +355,18 @@ body {
   }
 
   .logoMarkLarge {
-    width: 76px;
-    height: 76px;
-    flex-basis: 76px;
-    border-radius: 28px;
+    width: 104px;
+    height: 104px;
+    flex-basis: 104px;
   }
 
-  .logoMarkLarge .logoArrow {
-    font-size: 27px;
+  .logoMarkMuted {
+    width: 130px;
+    height: 130px;
   }
 
   .comingSoonCard h1 {
     font-size: clamp(46px, 15vw, 64px);
-  }
-
-  .eyebrow {
-    font-size: 10px;
-    padding: 9px 13px;
   }
 
   .decorArrow {
