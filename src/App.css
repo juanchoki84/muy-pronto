@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&display=swap");
-  
+
 :root {
   --bg: #f6f8fb;
   --surface: #ffffff;
@@ -64,7 +64,7 @@ body {
 }
 
 /* =========================================================
-   Fondo inspirado en la imagen de referencia
+   Fondo inspirado en imagen de marca
    ========================================================= */
 
 .bgRing {
@@ -117,24 +117,29 @@ body {
 }
 
 .bgSparkOne {
-  left: 50%;
-  top: 58%;
+  left: 15%;
+  top: 66%;
+  color: rgba(255, 202, 75, 0.45);
 }
 
 .bgSparkTwo {
-  left: 14%;
-  top: 70%;
-  color: rgba(255, 202, 75, 0.4);
+  right: 15%;
+  top: 28%;
+  color: rgba(0, 198, 167, 0.24);
 }
+
+/* =========================================================
+   Escena de intercambio
+   ========================================================= */
 
 .exchangeScene {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  z-index: 1;
   width: min(1180px, 92vw);
   height: 520px;
-  z-index: 1;
+  transform: translate(-50%, -50%);
 }
 
 .exchangeCurve {
@@ -147,12 +152,12 @@ body {
 
 .exchangeCurveLeft {
   left: 9%;
-  border-radius: 120px 120px 120px 120px;
+  border-radius: 120px;
 }
 
 .exchangeCurveRight {
   right: 9%;
-  border-radius: 120px 120px 120px 120px;
+  border-radius: 120px;
 }
 
 .exchangeCenterGlow {
@@ -163,7 +168,11 @@ body {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 245, 210, 0.95), rgba(255, 202, 75, 0.16));
+  background: radial-gradient(
+    circle,
+    rgba(255, 245, 210, 0.95),
+    rgba(255, 202, 75, 0.16)
+  );
   box-shadow: 0 0 28px rgba(255, 202, 75, 0.58);
 }
 
@@ -193,7 +202,7 @@ body {
 }
 
 .exchangeNodeLeft {
-  left: 2%;
+  left: 1%;
   transform: translateY(-50%) rotate(-8deg);
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.3), transparent),
@@ -204,7 +213,7 @@ body {
 }
 
 .exchangeNodeRight {
-  right: 2%;
+  right: 1%;
   transform: translateY(-50%) rotate(8deg);
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.34), transparent),
@@ -222,10 +231,10 @@ body {
   position: relative;
   z-index: 2;
   width: min(820px, 100%);
-  min-height: 480px;
+  min-height: 520px;
   border: 1px solid rgba(219, 227, 238, 0.94);
   border-radius: 42px;
-  padding: 42px 44px 48px;
+  padding: 40px 44px 46px;
   background:
     radial-gradient(circle at top right, rgba(0, 198, 167, 0.16), transparent 36%),
     radial-gradient(circle at bottom left, rgba(255, 202, 75, 0.08), transparent 30%),
@@ -237,7 +246,7 @@ body {
   display: grid;
   place-items: center;
   text-align: center;
-  gap: 14px;
+  gap: 0;
   overflow: hidden;
 }
 
@@ -250,7 +259,7 @@ body {
 .comingSoonLogoWrap {
   display: grid;
   place-items: center;
-  margin-bottom: 68px;
+  margin-bottom: 70px;
 }
 
 .comingSoonContent {
@@ -259,6 +268,7 @@ body {
 
 .comingSoonCard h1 {
   position: relative;
+  z-index: 1;
   margin: 0;
   color: var(--ink-strong);
   font-size: clamp(58px, 8vw, 96px);
@@ -275,13 +285,13 @@ body {
   position: absolute;
   left: 50%;
   bottom: -10px;
-  transform: translateX(-50%) rotate(-2deg);
+  z-index: -1;
   width: 270px;
   height: 10px;
   border-radius: var(--radius-pill);
   background: var(--yellow);
   opacity: 0.95;
-  z-index: -1;
+  transform: translateX(-50%) rotate(-2deg);
 }
 
 .comingSoonCard p {
@@ -426,7 +436,7 @@ body {
 @media (max-width: 900px) {
   .exchangeScene {
     width: 92vw;
-    bottom: 64px;
+    height: 460px;
   }
 
   .exchangeNode {
@@ -441,20 +451,24 @@ body {
 
 @media (max-width: 760px) {
   .comingSoonCard {
-  min-height: 460px;
-  padding: 34px 22px 40px;
-  border-radius: 34px;
- }
+    min-height: 500px;
+    padding: 34px 22px 40px;
+    border-radius: 34px;
+  }
+
+  .comingSoonLogoWrap {
+    margin-bottom: 26px;
+  }
 
   .comingSoonCard h1 {
     font-size: clamp(50px, 12vw, 78px);
   }
 
   .comingSoonCard h1::after {
-  width: 220px;
-  height: 9px;
-  bottom: -8px;
- }
+    width: 220px;
+    height: 9px;
+    bottom: -8px;
+  }
 
   .comingSoonCard p {
     font-size: 16px;
@@ -472,15 +486,22 @@ body {
   }
 
   .exchangeScene {
-  width: 92vw;
-  bottom: -10px;
-  height: 240px;
- }
+    width: 96vw;
+    height: 430px;
+  }
 
   .exchangeNode {
-    width: 86px;
-    height: 86px;
+    width: 84px;
+    height: 84px;
     border-radius: 24px;
+  }
+
+  .exchangeNodeLeft {
+    left: -8px;
+  }
+
+  .exchangeNodeRight {
+    right: -8px;
   }
 
   .exchangeNode::before {
@@ -495,14 +516,18 @@ body {
 
 @media (max-width: 560px) {
   .comingSoonPage {
-    padding: 16px;
+    min-height: 100vh;
+    padding: 18px 16px 230px;
+    align-items: start;
   }
 
   .comingSoonCard {
-  min-height: 430px;
-  padding: 28px 18px 34px;
-  border-radius: 30px;
-}
+    width: min(94vw, 430px);
+    min-height: 430px;
+    padding: 28px 18px 34px;
+    border-radius: 30px;
+    margin-top: 78px;
+  }
 
   .logoMarkLarge {
     width: 148px;
@@ -516,40 +541,147 @@ body {
     flex-basis: 130px;
   }
 
+  .comingSoonLogoWrap {
+    margin-bottom: 20px;
+  }
+
   .comingSoonCard h1 {
     font-size: clamp(44px, 15vw, 64px);
   }
 
+  .comingSoonCard h1::after {
+    width: 190px;
+    height: 8px;
+    bottom: -7px;
+  }
+
+  .comingSoonCard p {
+    font-size: 14px;
+    margin-top: 16px;
+  }
+
+  .launchCountdown {
+    margin-top: 22px;
+  }
+
+  .countdownIntro {
+    margin-bottom: 12px;
+    padding: 7px 12px;
+    font-size: 10px;
+  }
+
+  .countdownGrid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 6px;
+  }
+
   .countdownItem {
     min-width: 0;
-    padding: 12px 10px;
+    padding: 10px 6px;
+    border-radius: 14px;
   }
 
   .countdownValue {
-    font-size: 28px;
+    font-size: 22px;
   }
 
   .countdownLabel {
-    font-size: 11px;
+    margin-top: 6px;
+    font-size: 9px;
   }
 
+  .launchMeta {
+    margin-top: 12px !important;
+    font-size: 12px !important;
+  }
+
+  /* =========================================================
+     Escena inferior en mobile
+     ========================================================= */
+
   .exchangeScene {
-  bottom: -4px;
-  height: 200px;
-}
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: calc(100% - 250px);
+    z-index: 1;
+    width: min(360px, 92vw);
+    height: 200px;
+    transform: translateX(-50%);
+  }
 
   .exchangeCurve {
-    top: 88px;
-    height: 86px;
+    display: block;
+    position: absolute;
+    top: 64px;
+    width: 42%;
+    height: 70px;
+    border-top: 3px solid rgba(0, 198, 167, 0.45);
+  }
+
+  .exchangeCurveLeft {
+    left: 18px;
+    border-radius: 120px;
+    transform: rotate(8deg);
+  }
+
+  .exchangeCurveRight {
+    right: 18px;
+    border-radius: 120px;
+    transform: rotate(-8deg);
+  }
+
+  .exchangeCenterGlow {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 58px;
+    transform: translateX(-50%);
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle,
+      rgba(255, 245, 210, 0.98),
+      rgba(255, 202, 75, 0.2)
+    );
+    box-shadow: 0 0 20px rgba(255, 202, 75, 0.55);
   }
 
   .exchangeNode {
-    width: 70px;
-    height: 70px;
+    top: auto;
+    bottom: 8px;
+    width: 82px;
+    height: 82px;
+    border-radius: 24px;
+  }
+
+  .exchangeNode::before {
+    inset: 7px;
+    border-radius: 18px;
   }
 
   .exchangeNode span {
-    font-size: 22px;
+    font-size: 26px;
+  }
+
+  .exchangeNodeLeft {
+    left: 10px;
+    transform: rotate(-10deg);
+  }
+
+  .exchangeNodeRight {
+    right: 10px;
+    transform: rotate(10deg);
+  }
+
+  .bgSparkOne {
+    display: block;
+    left: 50%;
+    top: calc(100% - 292px);
+    transform: translateX(-50%);
+    font-size: 26px;
+    color: rgba(0, 198, 167, 0.28);
   }
 
   .bgDotTeal,
@@ -557,14 +689,4 @@ body {
   .bgSparkTwo {
     display: none;
   }
-
-  .comingSoonLogoWrap {
-  margin-bottom: 14px;
-}
-
-.comingSoonCard h1::after {
-  width: 190px;
-  height: 8px;
-  bottom: -7px;
-}
 }

@@ -56,6 +56,10 @@ export default function App() {
         <span className="bgSpark bgSparkTwo">✦</span>
 
         <div className="exchangeScene">
+          <span className="exchangeCurve exchangeCurveLeft" />
+          <span className="exchangeCurve exchangeCurveRight" />
+          <span className="exchangeCenterGlow" />
+
           <span className="exchangeNode exchangeNodeLeft">
             <span>✦</span>
           </span>
