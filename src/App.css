@@ -517,7 +517,7 @@ body {
 @media (max-width: 560px) {
   .comingSoonPage {
     min-height: 100vh;
-    padding: 18px 16px 230px;
+    padding: 18px 16px 160px;
     align-items: start;
   }
 
@@ -596,27 +596,27 @@ body {
   }
 
   /* =========================================================
-     Escena inferior en mobile
+     Escena inferior pegada al bloque en mobile
      ========================================================= */
 
   .exchangeScene {
     display: block;
     position: absolute;
     left: 50%;
-    top: calc(100% - 250px);
+    top: 565px;
     z-index: 1;
-    width: min(360px, 92vw);
-    height: 200px;
+    width: min(340px, 88vw);
+    height: 150px;
     transform: translateX(-50%);
   }
 
   .exchangeCurve {
     display: block;
     position: absolute;
-    top: 64px;
+    top: 42px;
     width: 42%;
-    height: 70px;
-    border-top: 3px solid rgba(0, 198, 167, 0.45);
+    height: 58px;
+    border-top: 3px solid rgba(0, 198, 167, 0.42);
   }
 
   .exchangeCurveLeft {
@@ -635,7 +635,7 @@ body {
     display: block;
     position: absolute;
     left: 50%;
-    top: 58px;
+    top: 36px;
     transform: translateX(-50%);
     width: 18px;
     height: 18px;
@@ -650,37 +650,37 @@ body {
 
   .exchangeNode {
     top: auto;
-    bottom: 8px;
-    width: 82px;
-    height: 82px;
-    border-radius: 24px;
+    bottom: 0;
+    width: 74px;
+    height: 74px;
+    border-radius: 22px;
   }
 
   .exchangeNode::before {
     inset: 7px;
-    border-radius: 18px;
+    border-radius: 17px;
   }
 
   .exchangeNode span {
-    font-size: 26px;
+    font-size: 24px;
   }
 
   .exchangeNodeLeft {
-    left: 10px;
+    left: 18px;
     transform: rotate(-10deg);
   }
 
   .exchangeNodeRight {
-    right: 10px;
+    right: 18px;
     transform: rotate(10deg);
   }
 
   .bgSparkOne {
     display: block;
     left: 50%;
-    top: calc(100% - 292px);
+    top: 548px;
     transform: translateX(-50%);
-    font-size: 26px;
+    font-size: 24px;
     color: rgba(0, 198, 167, 0.28);
   }
 
