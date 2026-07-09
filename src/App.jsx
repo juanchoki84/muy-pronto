@@ -56,12 +56,10 @@ export default function App() {
         <span className="bgSpark bgSparkTwo">✦</span>
 
         <div className="exchangeScene">
-          <span className="exchangeCurve exchangeCurveLeft" />
-          <span className="exchangeCurve exchangeCurveRight" />
-          <span className="exchangeCenterGlow" />
           <span className="exchangeNode exchangeNodeLeft">
             <span>✦</span>
           </span>
+
           <span className="exchangeNode exchangeNodeRight">
             <span>✦</span>
           </span>
@@ -90,8 +88,6 @@ export default function App() {
               <CountdownItem value={timeLeft.minutes} label="min" />
               <CountdownItem value={timeLeft.seconds} label="seg" />
             </div>
-
-            
           </div>
         </div>
       </section>
