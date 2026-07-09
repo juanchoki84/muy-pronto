@@ -1,12 +1,390 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&display=swap");
+
+:root {
+  --bg: #f6f8fb;
+  --surface: #ffffff;
+  --ink: #132238;
+  --ink-strong: #07142a;
+  --muted: #526174;
+  --line: #dfe7f1;
+  --teal: #00c6a7;
+  --teal-dark: #008c76;
+  --teal-soft: rgba(0, 198, 167, 0.12);
+  --yellow: #ffca4b;
+  --shadow-xl: 0 30px 80px rgba(19, 34, 56, 0.13);
+  --radius-pill: 999px;
+  font-family: "Rubik", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 html,
 body,
 #root {
   width: 100%;
   min-height: 100vh;
   margin: 0;
-  padding: 0;
+  font-family: "Rubik", sans-serif;
 }
 
 body {
-  min-width: 320px;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(0, 198, 167, 0.2), transparent 32%),
+    radial-gradient(circle at top right, rgba(255, 202, 75, 0.16), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(0, 198, 167, 0.12), transparent 32%),
+    var(--bg);
+  overflow-x: hidden;
+}
+
+/* =========================================================
+   Página Muy pronto
+   ========================================================= */
+
+.comingSoonPage {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.comingSoonPage::before {
+  content: "";
+  position: absolute;
+  width: min(1180px, calc(100% - 32px));
+  height: 1px;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 198, 167, 0.25),
+    rgba(255, 202, 75, 0.25),
+    transparent
+  );
+  z-index: -1;
+}
+
+.comingSoonBackground {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bgLogo {
+  position: absolute;
+  opacity: 0.06;
+  filter: blur(0.3px);
+}
+
+.bgLogoOne {
+  left: 7%;
+  top: 14%;
+}
+
+.bgLogoTwo {
+  right: 9%;
+  bottom: 11%;
+  opacity: 0.055;
+}
+
+.bgLogoThree {
+  right: 16%;
+  top: 16%;
+  opacity: 0.045;
+}
+
+.decorLine {
+  position: absolute;
+  border: 8px solid transparent;
+  border-top-color: rgba(0, 168, 141, 0.28);
+  border-radius: 50%;
+}
+
+.decorLineOne {
+  width: 260px;
+  height: 130px;
+  left: 18%;
+  top: 24%;
+  transform: rotate(14deg);
+}
+
+.decorLineTwo {
+  width: 360px;
+  height: 180px;
+  right: -70px;
+  top: 32%;
+  border-top-color: rgba(0, 198, 167, 0.34);
+}
+
+.decorLineThree {
+  width: 220px;
+  height: 110px;
+  left: 26%;
+  bottom: 4%;
+  border-top-color: rgba(255, 202, 75, 0.5);
+}
+
+.decorArrow {
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px solid rgba(219, 227, 238, 0.8);
+  color: var(--teal-dark);
+  font-size: 24px;
+  font-weight: 900;
+  box-shadow: 0 18px 38px rgba(19, 34, 56, 0.08);
+  backdrop-filter: blur(12px);
+}
+
+.decorArrowOne {
+  left: 12%;
+  bottom: 19%;
+}
+
+.decorArrowTwo {
+  right: 13%;
+  top: 20%;
+}
+
+.decorArrowThree {
+  right: 20%;
+  bottom: 26%;
+}
+
+.comingSoonCard {
+  position: relative;
+  width: min(760px, 100%);
+  min-height: 450px;
+  border: 1px solid rgba(219, 227, 238, 0.94);
+  border-radius: 42px;
+  padding: 48px 44px;
+  background:
+    radial-gradient(circle at top right, rgba(0, 198, 167, 0.16), transparent 36%),
+    radial-gradient(circle at bottom left, rgba(255, 202, 75, 0.13), transparent 34%),
+    rgba(255, 255, 255, 0.9);
+  box-shadow:
+    0 34px 90px rgba(19, 34, 56, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(18px);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  gap: 26px;
+  overflow: hidden;
+}
+
+.comingSoonCard::before {
+  content: "";
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  right: -150px;
+  top: -170px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 198, 167, 0.18), transparent 65%);
+}
+
+.comingSoonCard::after {
+  content: "";
+  position: absolute;
+  width: 240px;
+  height: 9px;
+  left: 50%;
+  bottom: 116px;
+  transform: translateX(-50%) rotate(-2deg);
+  border-radius: var(--radius-pill);
+  background: var(--yellow);
+  opacity: 0.9;
+  z-index: 0;
+}
+
+.comingSoonLogoWrap,
+.comingSoonContent {
+  position: relative;
+  z-index: 1;
+}
+
+.comingSoonLogoWrap {
+  display: grid;
+  place-items: center;
+}
+
+.comingSoonCard h1 {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: var(--ink-strong);
+  font-size: clamp(54px, 8vw, 92px);
+  line-height: 0.9;
+  letter-spacing: -0.075em;
+}
+
+.comingSoonCard h1 span {
+  color: var(--teal-dark);
+}
+
+.comingSoonCard p {
+  max-width: 560px;
+  margin: 22px auto 0;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.65;
+  font-weight: 800;
+}
+
+/* =========================================================
+   Logo fijo nuevo
+   ========================================================= */
+
+.logoMark {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  flex: 0 0 72px;
+  display: inline-grid;
+  place-items: center;
+
+  background: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+  isolation: auto !important;
+}
+
+.logoMarkLarge {
+  width: 150px;
+  height: 150px;
+  flex-basis: 150px;
+}
+
+.logoMarkMuted {
+  width: 190px;
+  height: 190px;
+  flex-basis: 190px;
+  opacity: 0.055;
+}
+
+.logoMark::before,
+.logoMark::after,
+.logoGlow,
+.logoArrow,
+.logoDot {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+  background-image: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  animation: none !important;
+}
+
+.logoMark img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+
+  background: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  filter: none !important;
+  animation: none !important;
+}
+
+/* =========================================================
+   Responsive
+   ========================================================= */
+
+@media (max-width: 760px) {
+  .comingSoonCard {
+    min-height: 430px;
+    padding: 38px 24px;
+    border-radius: 34px;
+  }
+
+  .comingSoonCard::after {
+    width: 180px;
+    bottom: 130px;
+  }
+
+  .comingSoonCard p {
+    font-size: 16px;
+  }
+
+  .bgLogoOne {
+    left: -34px;
+    top: 10%;
+  }
+
+  .bgLogoTwo {
+    right: -42px;
+    bottom: 8%;
+  }
+
+  .bgLogoThree,
+  .decorArrowThree {
+    display: none;
+  }
+
+  .decorLineOne {
+    left: -80px;
+    top: 22%;
+  }
+
+  .decorLineTwo {
+    right: -180px;
+    top: 48%;
+  }
+}
+
+@media (max-width: 560px) {
+  .comingSoonPage {
+    padding: 18px;
+  }
+
+  .comingSoonCard {
+    min-height: 390px;
+    padding: 32px 20px;
+    border-radius: 30px;
+  }
+
+  .logoMarkLarge {
+    width: 116px;
+    height: 116px;
+    flex-basis: 116px;
+  }
+
+  .logoMarkMuted {
+    width: 140px;
+    height: 140px;
+  }
+
+  .comingSoonCard h1 {
+    font-size: clamp(46px, 15vw, 64px);
+  }
+
+  .decorArrow {
+    width: 44px;
+    height: 44px;
+    border-radius: 16px;
+    font-size: 20px;
+  }
 }
